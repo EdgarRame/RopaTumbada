@@ -1,7 +1,7 @@
 package Dao;
 
 import Conexion.Conexion;
-import modelo.ModeloEspecialidad;
+import modelo.Modelo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -13,7 +13,7 @@ public class DAOEspecialidades implements DAOGeneral{
         conexion = new Conexion();
     }
     @Override
-    public boolean agregar(ModeloEspecialidad elemento){
+    public boolean agregar(Modelo elemento){
         if(conexion.abrir()){
             String sql = "INSERT INTO clientes(Nombre, Apellido, Telefono, Ciudad) VALUES (?,?)";
             Connection enlace = conexion.obtener();
@@ -34,7 +34,7 @@ public class DAOEspecialidades implements DAOGeneral{
         return false;
     }
     @Override
-     public boolean agregar(ModeloEspecialidad elemento){
+     public boolean agregar(Modelo elemento){
         if(conexion.abrir()){
             String sql = "INSERT INTO productos(Nombre, Precio, Existencia) VALUES (?,?)";
             Connection enlace = conexion.obtener();
@@ -54,7 +54,7 @@ public class DAOEspecialidades implements DAOGeneral{
         return false;
      }
      @Override  
-     public boolean agregar(ModeloEspecialidad elemento){
+     public boolean agregar(Modelo elemento){
         if(conexion.abrir()){
             String sql = "INSERT INTO proveedor(Nombre, Dirección, Telefono, Correo) VALUES (?,?)";
             Connection enlace = conexion.obtener();
@@ -76,8 +76,8 @@ public class DAOEspecialidades implements DAOGeneral{
      }
      
     @Override
-    public List<ModeloEspecialidad> consultar(){
-        List<ModeloEspecialidad> Lista = new Arraylist<>();
+    public List<Modelo> consultar(){
+        List<Modelo> Lista = new Arraylist<>();
         if (conexion.abrir()){
             String sql = "SELECT * FROM clientes";
             Connection enlace = conexion.obtener();
@@ -85,7 +85,7 @@ public class DAOEspecialidades implements DAOGeneral{
                 Statement stmt = enlace.createStatement();
                 ResultSet resultados = stmt.executeQuery(sql);
                 while (resultados.next()){
-                    ModeloEspecialidad prueba2 = new ModeloEspecialidad();
+                    Modelo prueba2 = new Modelo();
                     prueba2.setId(resultados.getInt("IdCliente"));
                     prueba2.SetNombre(resultados.getString("Nombre"));
                     prueba2.SetApellido(resultados.getString("Apellido"));
@@ -102,8 +102,8 @@ public class DAOEspecialidades implements DAOGeneral{
         return Lista.stream().todolist();
     }
     @Override
-    public List<ModeloEspecialidad> consultar(){
-        List<ModeloEspecialidad> Lista = new Arraylist<>();
+    public List<Modelo> consultar(){
+        List<Modelo> Lista = new Arraylist<>();
         if (conexion.abrir()){
             String sql = "SELECT * FROM productos ";
             Connection enlace = conexion.obtener();
@@ -111,7 +111,7 @@ public class DAOEspecialidades implements DAOGeneral{
                 Statement stmt = enlace.createStatement();
                 ResultSet resultados = stmt.executeQuery(sql);
                 while (resultados.next()){
-                    ModeloEspecialidad prueba2 = new ModeloEspecialidad();
+                    Modelo prueba2 = new Modelo();
                     prueba2.setId(resultados.getInt("IdProducto"));
                     prueba2.SetNombre(resultados.getString("Nombre"));
                     prueba2.SetPrecio(resultados.getInt("Precio"));
@@ -127,8 +127,8 @@ public class DAOEspecialidades implements DAOGeneral{
         return Lista.stream().todolist();
     }
     @Override
-    public List<ModeloEspecialidad> consultar(){
-        List<ModeloEspecialidad> Lista = new Arraylist<>();
+    public List<Modelo> consultar(){
+        List<Modelo> Lista = new Arraylist<>();
         if (conexion.abrir()){
             String sql = "SELECT * FROM proveedores";
             Connection enlace = conexion.obtener();
@@ -136,7 +136,7 @@ public class DAOEspecialidades implements DAOGeneral{
                 Statement stmt = enlace.createStatement();
                 ResultSet resultados = stmt.executeQuery(sql);
                 while (resultados.next()){
-                    ModeloEspecialidad prueba2 = new ModeloEspecialidad();
+                    Modelo prueba2 = new Modelo();
                     prueba2.setId(resultados.getInt("IdProveedor"));
                     prueba2.SetNombre(resultados.getString("Nombre"));
                     prueba2.SetDirección(resultados.getString("Dirección"));
@@ -153,7 +153,7 @@ public class DAOEspecialidades implements DAOGeneral{
         return Lista.stream().todolist();
     }
     @Override
-    public boolean actualizar(Integer id, ModeloEspecialidad nuevo){
+    public boolean actualizar(Integer id, Modelo nuevo){
         if(conexion.abrir()){
             String sql = "UPDATE clientes SET nombre=? WHERE id=?";
             Connection enlace = conexion.obtener();
@@ -173,7 +173,7 @@ public class DAOEspecialidades implements DAOGeneral{
         }
         return false;
     }
-        public boolean actualizar(Integer id, ModeloEspecialidad nuevo){
+        public boolean actualizar(Integer id, Modelo nuevo){
         if(conexion.abrir()){
             String sql = "UPDATE productos SET nombre=? WHERE id=?";
             Connection enlace = conexion.obtener();
@@ -192,7 +192,7 @@ public class DAOEspecialidades implements DAOGeneral{
         }
         return false;
     }
-            public boolean actualizar(Integer id, ModeloEspecialidad nuevo){
+            public boolean actualizar(Integer id, Modelo nuevo){
         if(conexion.abrir()){
             String sql = "UPDATE proveedor SET nombre=? WHERE id=?";
             Connection enlace = conexion.obtener();
