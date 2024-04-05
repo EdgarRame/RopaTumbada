@@ -3,43 +3,54 @@ package java;
 public class Modelo {
     
     public class ModeloEspecialidad {
-        private int id; 
-        private String nombre; 
+        private int Id; 
+        private String Nombre;
+        private String Apellido;
+        private String Ciudad;
+        private int Existencia;
+        private int Telefono;
+        private int Precio;
         
         public ModeloEspecialidad() {
         }
         
-        public ModeloEspecialidad(int id, String nombre) {
-            this.id = id; 
-            this.nombre = nombre; 
+        public ModeloEspecialidad(int Id, String Nombre, String Apellido, String Ciudad,
+            int Existencia, int Telefono,int Precio) {
+            this.Id = Id; 
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.Ciudad = ciudad;
+            this.Existencia = existencia;
+            this.Telefono = telefono;
+            this.Precio = precio;    
         }
         
         public int getId() {
-            return Id; 
+            this.id= Id;
         }
         
-        public void setId(int Id) {
-            this.Id = Id; 
+        public void getId(int Id) {
+            return.id; 
         }
         
         public String getNombre() {
-            return Nombre; 
+            this.nombre= Nombre; 
         }
         
-        public void setNombre(String Nombre) {
-            this.Nombre = Nombre; 
+        public void getNombre(String Nombre) {
+            return.nombre; 
         }
         
-        public String getApellido(){
-            this.Apellido=Apellido;
+        public String setApellido(){
+            this.apellido= Apellido;
         }
-        
-        public void setApellido(String Apellido){
-            return.Apellido;
+      
+        public void getApellido(String Apellido){
+            return.apellido;
         }
         
         public int setExistencia(){
-            this.Existencia = Existencia;
+            this.existencia= Existencia;
         }
         
         public void getExistencia(int existencia){
@@ -47,42 +58,42 @@ public class Modelo {
         }
         
         public int setTelefono(){
-            this.Telefono = Telefono;
+            this.telefono = Telefono;
         }
         
         public void getTelefono(int Telefono){
-            return.Telefono;
+            return.telefono;
         }
         
         public String setCiudad(){
-            this.Ciudad = Ciudad;
+            this.ciudad = Ciudad;
         }
         
         public void getCiudad(String Ciudad){
-            return.Ciudad;
+            return.ciudad;
         }
         
         public int setPrecio(){
-            this.Precio = Precio;
+            this.precio = Precio;
         }
         
         public void getPrecio(intPrecio){
-            return.Precio;
+            return.precio;
         }
         
         public int setExistencia(){
-            this.Existencia = Existencia
+            this.existencia = Existencia
         }
         
         public void Existencia(){
-            return.Existencia;
+            return.existencia;
         }
         
         @Override
         public String toString() {
             return "Especialidad{" + 
-                    "id=" + id + 
-                    ", nombre='" + nombre + '\'' +
+                    "id=" + Id + 
+                    ", nombre='" + Nombre + '\'' +
                     '}';
         }
         
