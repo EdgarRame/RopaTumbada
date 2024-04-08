@@ -1,4 +1,5 @@
 package DAO;
+/*@author Edgar*/
 
 import Conexion.Conexion;
 import java.Modelo;
@@ -6,12 +7,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class DAOEspecialidades implement DAOGeneral<Integer,Vista> {
+public class DAOEspecialidades implement DAOGeneral<Integer, Sistemaxx>{
     private final Conexion conexion;
     
-    public DAOEspecialidades(){
-        conexion = new Conexion();
-    }
+    public class DAOEspecialidades(){
+        Connetion = new Conexion();
+
+@Override
         public boolean agregar(Modelo elemento){
         if(conexion.abrir()){
             String sql = "INSERT INTO clientes(Nombre, Apellido, Telefono, Ciudad) VALUES (?,?)";
@@ -30,10 +32,8 @@ public class DAOEspecialidades implement DAOGeneral<Integer,Vista> {
                 conexion.cerrar();
             }
         }
-        return false;
-    }
-         public boolean agregar(Modelo elemento){
-        if(conexion.abrir()){
+            return false;
+            if(conexion.abrir()){
             String sql = "INSERT INTO productos(Nombre, Precio, Existencia) VALUES (?,?)";
             Connection enlace = conexion.obtener();
             try{
@@ -50,9 +50,7 @@ public class DAOEspecialidades implement DAOGeneral<Integer,Vista> {
             }
         }
         return false;
-     }
-     public boolean agregar(Modelo elemento){
-        if(conexion.abrir()){
+            if(conexion.abrir()){
             String sql = "INSERT INTO proveedor(Nombre, Dirección, Telefono, Correo) VALUES (?,?)";
             Connection enlace = conexion.obtener();
             try{
@@ -68,9 +66,10 @@ public class DAOEspecialidades implement DAOGeneral<Integer,Vista> {
             } finally {
                 conexion.cerrar();
             }
+            return false;
         }
-        return false;
-     }
+    }
+@Override
         public List <Modelo> consultar(){
         List <Modelo> Lista = new Arraylist<>();
         if (conexion.abrir()){
@@ -95,8 +94,6 @@ public class DAOEspecialidades implement DAOGeneral<Integer,Vista> {
             }
         }
         return Lista.stream().todolist();
-    }
-        public List <Modelo> consultar(){
         List <Modelo> Lista = new Arraylist<>();
         if (conexion.abrir()){
             String sql = "SELECT * FROM productos ";
@@ -117,10 +114,8 @@ public class DAOEspecialidades implement DAOGeneral<Integer,Vista> {
             }finally{
                 conexion.cerrar();
             }
+            return Lista.stream().todolist();
         }
-        return List.stream().todolist();
-    }
-        public List <Modelo> consultar(){
         List <Modelo> Lista = new Arraylist<>();
         if (conexion.abrir()){
             String sql = "SELECT * FROM proveedores";
@@ -142,10 +137,10 @@ public class DAOEspecialidades implement DAOGeneral<Integer,Vista> {
             }finally{
                 conexion.cerrar();
             }
+            return Lista.stream().todolist();
         }
-        return List.stream().todolist();
-    }
-    public boolean actualizar (Integer id, Modelo nuevo){
+}
+        public boolean actualizar (Integer id, Modelo nuevo){
         if(conexion.abrir()){
             String sql = "UPDATE clientes SET nombre=? WHERE id=?";
             Connection enlace = conexion.obtener();
@@ -164,8 +159,6 @@ public class DAOEspecialidades implement DAOGeneral<Integer,Vista> {
             }
         }
         return false;
-    }
-            public boolean actualizar (Integer id, Modelo nuevo){
         if(conexion.abrir()){
             String sql = "UPDATE productos SET nombre=? WHERE id=?";
             Connection enlace = conexion.obtener();
@@ -183,9 +176,7 @@ public class DAOEspecialidades implement DAOGeneral<Integer,Vista> {
             }
         }
         return false;
-    }
-            public boolean actualizar (Integer id, Modelo nuevo){
-        if(conexion.abrir()){
+            if(conexion.abrir()){
             String sql = "UPDATE proveedor SET nombre=? WHERE id=?";
             Connection enlace = conexion.obtener();
             try{
@@ -219,9 +210,7 @@ public class DAOEspecialidades implement DAOGeneral<Integer,Vista> {
                     conexion.cerrar();
                 }
             }
-            return false;
-        }
-                public boolean eliminar (Integer id){
+            return false;          
             if (conexion.abrir()){
                 String sql = "DELETE FROM productos WHERE id=?";
                 Connection con = conexion.obtener();
@@ -237,8 +226,6 @@ public class DAOEspecialidades implement DAOGeneral<Integer,Vista> {
                 }
             }
             return false;
-        }
-                        public boolean eliminar (Integer id){
             if (conexion.abrir()){
                 String sql = "DELETE FROM proveedor WHERE id=?";
                 Connection con = conexion.obtener();
@@ -255,4 +242,5 @@ public class DAOEspecialidades implement DAOGeneral<Integer,Vista> {
             }
             return false;
         }
-}            
+    }
+}

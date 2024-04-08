@@ -1,8 +1,6 @@
 package java;
-
-public class Modelo {
-    
-    public class ModeloEspecialidad {
+   
+    public class Modelo {
         private int Id; 
         private String Nombre;
         private String Apellido;
@@ -11,91 +9,67 @@ public class Modelo {
         private int Telefono;
         private int Precio;
         
-        public ModeloEspecialidad() {
-        }
-        
-        public ModeloEspecialidad(int Id, String Nombre, String Apellido, String Ciudad,
-            int Existencia, int Telefono,int Precio) {
-            this.Id = Id; 
-            this.Nombre = nombre;
-            this.Apellido = apellido;
-            this.Ciudad = ciudad;
-            this.Existencia = existencia;
-            this.Telefono = telefono;
-            this.Precio = precio;    
-        }
-        
         public int getId() {
-            this.id= Id;
+            return Id;
         }
         
-        public void getId(int Id) {
-            return.id; 
+        public void setId(int Id) {
+            this.Id = Id; 
         }
         
         public String getNombre() {
-            this.nombre= Nombre; 
+            return Nombre; 
         }
         
-        public void getNombre(String Nombre) {
-            return.nombre; 
+        public void setNombre(String Nombre) {
+            this.Nombre = Nombre; 
         }
         
-        public String setApellido(){
-            this.apellido= Apellido;
+        public String getApellido(){
+            return Apellido;
         }
       
-        public void getApellido(String Apellido){
-            return.apellido;
+        public void setApellido(String Apellido){
+            this.Apellido = Apellido;
         }
         
-        public int setExistencia(){
-            this.existencia= Existencia;
+        public int getExistencia(){
+            return Existencia;
         }
         
-        public void getExistencia(int existencia){
-            return.existencia;
+        public void setExistencia(int Existencia){
+            this.Existencia = Existencia;
         }
         
-        public int setTelefono(){
-            this.telefono = Telefono;
+        public int getTelefono(){
+            return Telefono;
         }
         
-        public void getTelefono(int Telefono){
-            return.telefono;
+        public void setTelefono(int Telefono){
+            this.Telefono = Telefono;
         }
         
-        public String setCiudad(){
-            this.ciudad = Ciudad;
+        public String getCiudad(){
+            return Ciudad;
         }
         
-        public void getCiudad(String Ciudad){
-            return.ciudad;
+        public void setCiudad(String Ciudad){
+            this.Ciudad = Ciudad;
         }
         
-        public int setPrecio(){
-            this.precio = Precio;
+        public int getPrecio(){
+            return Precio;
         }
         
-        public void getPrecio(intPrecio){
-            return.precio;
+        public void setPrecio(int Precio){
+            this.Precio= Precio;
         }
-        
-        public int setExistencia(){
-            this.existencia = Existencia
-        }
-        
-        public void Existencia(){
-            return.existencia;
-        }
-        
+ 
         @Override
         public String toString() {
             return "Especialidad{" + 
                     "id=" + Id + 
                     ", nombre='" + Nombre + '\'' +
                     '}';
-        }
-        
-    }
+    }    
 }
